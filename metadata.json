@@ -1,0 +1,8 @@
+{
+  "name": "Dr. Gemini Triage",
+  "description": "A WhatsApp-style medical triage assistant powered by Gemini 2.5 and 3.0. Features text chat with deep reasoning, audio transcription, map grounding for finding clinics, and a real-time voice conversational avatar.",
+  "requestFramePermissions": [
+    "microphone",
+    "geolocation"
+  ]
+}
