@@ -65,7 +65,7 @@ export const sendMessageToDrGemini = async (
   history: Message[],
   userMessage: string
 ): Promise<{ text: string; mapLinks?: { uri: string; title: string }[] }> => {
-  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+  const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_API_KEY });
   const location = await getCurrentLocation();
   
   const lowerMsg = userMessage.toLowerCase();
@@ -213,7 +213,7 @@ export const connectLiveTriageSession = async (
   onAudioData: (base64: string) => void,
   onClose: () => void
 ): Promise<() => void> => {
-  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+  const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_API_KEY });
   
   // Audio Setup
   const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)({ sampleRate: 16000 });
@@ -303,7 +303,7 @@ export const startLiveDictation = async (
   onError: (err: any) => void,
   onClose: () => void
 ): Promise<() => void> => {
-  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+  const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_API_KEY });
   const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)({ sampleRate: 16000 });
   await audioContext.resume();
   
